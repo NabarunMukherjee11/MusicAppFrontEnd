@@ -1,0 +1,254 @@
+.song-container {
+    background-color: #211925;
+    background-image: url('../assets/Images/AnimationBackground.gif');
+    background-repeat: no-repeat;
+    background-position: center; /* Center the background image */
+    background-size: 50%;
+    color: #8c8a8a;
+    padding: 1%;
+    border-radius: 9px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .main-page{
+    padding: 1%;
+    border-radius: 9px;
+    background-size: 20%;
+    display: flex;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .song-details {
+    opacity: 0;
+    transition: opacity 5s ease-in-out; /* Adjust the duration as needed */
+  }
+  
+  .song-details.visible {
+    opacity: 1;
+  }
+  .song-name {
+    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden; /* Hide any overflow content */
+    text-overflow: ellipsis; /* Show ellipsis for overflow text */
+    width: 50%;
+    transform: translateX(50%); /* Center the text */
+    position: relative;
+ }
+  .searchBar {
+    position: fixed;
+    top: 0;
+    margin-top: 5%;
+    left: 0;
+    width: 100%;
+    opacity: 0.8;
+  }
+
+  .loadingGif{
+    margin-top: 10%;
+  }
+  
+  input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  button {
+    opacity: 0.7;
+    background-color: #833cef;
+    color: rgb(190, 75, 235);
+    padding: 10px 20px;
+    border: none  solid #ea2ef1;;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 1s ease;
+  }
+  
+  button:hover {
+    background-color: #560679; /* Fallback color */
+    background-image: linear-gradient(to right, #560679, #290f31);
+    transform: scale(1.2);
+  }
+  
+  audio {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+
+  
+  input[type="range"] {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .error {
+    color: #e74c3c;
+    margin-top: 10px;
+  }
+  
+  .song-image {
+    border-radius: 10%;
+    margin-top: 10%;
+    filter: grayscale(100%);
+    opacity: 0.4;
+    transform: scale(1.05) perspective(1000px) rotateY(0deg);
+    transition: transform 1s ease;
+  }
+  
+  .song-image:hover {
+    /* Restore original color and remove 3D effect on hover */
+    filter: grayscale(70%);
+    opacity: 0.6;
+    transform: scale(1.2) perspective(1000px) rotateY(15deg);
+  }
+
+  .buttons{
+  justify-content: space-between; /* Add space between the buttons */
+  align-items: center;
+    margin-top: 2%;
+  }
+
+  .custom-button {
+    width: 10%; /* Adjust the width as needed */
+    height: 10%; /* Adjust the height as needed */
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .custom-button-small {
+    width: 7%; /* Adjust the width as needed */
+    height: 7%; /* Adjust the height as needed */
+    margin-bottom: 1.5%;
+  }
+
+  .custom-button,
+.custom-button-small {
+    /* Other styles */
+    transition: all 0.5s ease; /* Smooth transition for all properties */
+}
+
+.custom-button:hover,
+.custom-button-small:hover {
+    transform: scale(1.1); /* Scale the image on hover */
+    background-color: #560679; /* Fallback color */
+    background-image: linear-gradient(to right, #560679, #290f31);
+    border-radius: 50%;
+}
+
+.custom-button:active,
+.custom-button-small:active {
+    filter: brightness(80%); /* Darken the image on click */
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Set track color */
+  background-color: #090909;
+  /* Set height and width */
+  height: 10px;
+  width: 45%;
+  /* Set border radius */
+  border-radius: 5px;
+  padding: 0;
+  outline: none;
+}
+
+/* Style the track */
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #701398; /* Fallback color */
+  background-image: linear-gradient(to right, #560679, #290f31);
+  transition: all 0.5s ease;
+}
+
+/* Style the thumb */
+input[type="range"]::-webkit-slider-thumb {
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+  /* Set thumb size */
+  width: 15px;
+  height: 15px;
+  background: #0c0c0c;
+
+  border: 2px solid #333;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Style the thumb when hovered */
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #ab34d6;
+  transform: scale(2);
+}
+
+input[type="range"]:hover::-webkit-slider-runnable-track {
+  background: #bbb; /* Track color on hover */
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #ccc; /* Track color on focus */
+}
+
+.main-page {
+  background-color: #1b1a1b;
+  background-image: url('../assets/Images/LogoSPE.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #010004;
+  padding: 1%;
+  border-radius: 9px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 100% solid black;
+}
+
+.maintext{
+  text-shadow: 
+  #e486e4 0 0 12px,
+  rgb(146, 16, 169) 0 0 25px,
+  #c87fe2 0 0 35PX,
+  #A91079 0 0 45PX;
+  font-size: 6em; /* Adjust the font size as needed */
+  font-family: 'Dancing Script', cursive;
+  text-align: right; /* Align text to the right */
+  position: fixed; /* Position the text relative to the viewport */
+  bottom: 10%; /* Move the text 10px from the bottom */
+  right: 50%; /* Move the text 10px from the right */
+}
+
+.maintext h3 {
+  font-size: 40%; /* Adjust the font size as needed */
+  margin: 0; /* Remove any default margins */
+}
+
+.logoimage {
+  position: fixed; /* Position the image relative to the viewport */
+  bottom: -6px; /* Move the image 10px from the bottom */
+  right: 10%; /* Move the image 10px from the right */
+  width: 50%;
+}
+
+.logotext{
+  text-shadow: 
+  #e486e4 0 0 12px,
+  rgb(146, 16, 169) 0 0 25px,
+  #c87fe2 0 0 35PX,
+  #A91079 0 0 45PX;
+  font-size: 1.5em; /* Adjust the font size as needed */
+  font-family: 'Dancing Script', cursive;
+  text-align: right; /* Align text to the right */
+  position: fixed; /* Position the text relative to the viewport */
+  right:48%;
+  bottom: 77%;
+}
+  
