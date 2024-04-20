@@ -1,0 +1,321 @@
+.main-slider-container{
+    width: 90%;
+    height: 100px;
+    background-color: transparent;
+}
+
+.slidermain {
+    position: fixed;
+    top: 35%;
+    right: 0;
+    height: 100vh; /* Full height of the viewport */
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#slider{
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    background-color: transparent;
+}
+
+.slider-card{
+    opacity:  95%;
+    filter: grayscale(50%) brightness(50%);
+}
+
+.slider-card:hover {
+    transform: scale(0.95);
+    opacity: 100%; /* Increase size on hover */
+    filter: grayscale(0%) brightness(100%);
+}
+
+#slider::-webkit-scrollbar{
+    display: none;
+}
+
+#main-slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.0);
+}
+
+
+.slider-card-title, .slider-card-description{
+    margin: 5px 0px 5px 10px;
+}
+
+.slider-card-title{
+    font-weight: 500;
+    margin-top: 10px;
+    max-width: 200px; /* Adjust as needed */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.slider-card-image{
+    width: 100%;
+    height: 220px;
+    background-color: rgb(240 240 240 / 80%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.slider-icon.left, .slider-icon.right {
+    background: white;
+    border-radius: 100%;
+    position: absolute;
+    opacity: 0.5;
+    box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
+    cursor: pointer;
+    top: 0;
+    z-index: 1;
+}
+
+.slider-icon.left{
+    left: 0;
+}
+
+.slider-icon.right{
+    right: 0;
+}
+
+.slider-icon.left:hover, .slider-icon.right:hover{
+    opacity: 1;
+}
+
+.slider-card{
+    width: 300px;
+    height: 300px;
+    background: white;
+    border-radius: 10px;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease; /* Add transition for smooth transformation */
+    position: relative;
+}
+
+.slider-card-content {
+    flex: 1;
+    padding: 10px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+}
+
+.slider-card-image {
+    position: relative; /* Make the image container relative for absolute positioning */
+    width: 100%;
+    height: 220px;
+    background-color: rgba(255, 192, 203, 0.5);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden; /* Hide overflowing content */
+}
+.slidercustom-button {
+    position: absolute; /* Position the button absolutely */
+    bottom: 10px; /* Adjust vertical position as needed */
+    right: 10px; /* Adjust horizontal position as needed */
+    width: 60px; /* Adjust button width as needed */
+    height: 60px; /* Adjust button height as needed */
+    background-color: transparent; /* Transparent background */
+    border: none; /* Remove border */
+    cursor: pointer;
+}
+
+.song-container {
+    background-color: #211925;
+    background-image: url('../assets/Images/AnimationBackground.gif');
+    background-repeat: no-repeat;
+    background-position: center; /* Center the background image */
+    background-size: 100%;
+    color: #8c8a8a;
+    padding: 1%;
+    border-radius: 9px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 50%; /* Center the div vertically */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width:50%;
+    box-shadow: 0 0 2000px rgba(0, 0, 0, 0.5), /* Shadow in all directions */
+                0 0 2000px rgba(0, 0, 0, 1000);
+  }
+
+  .song-details {
+    opacity: 0;
+    transition: opacity 5s ease-in-out;
+  }
+  
+  .song-details.visible {
+    opacity: 1;
+  }
+  .song-name {
+    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden; /* Hide any overflow content */
+    text-overflow: ellipsis; /* Show ellipsis for overflow text */
+    width: 50%;
+    transform: translateX(50%); 
+    position: relative;
+ }
+  
+  button {
+    opacity: 0.7;
+    background-color: #833cef;
+    color: rgb(190, 75, 235);
+    padding: 10px 20px;
+    border: none  solid #ea2ef1;;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 1s ease;
+  }
+  
+  button:hover {
+    background-color: #560679; /* Fallback color */
+    background-image: linear-gradient(to right, #560679, #290f31);
+    transform: scale(1.2);
+  }
+  
+  audio {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+
+  
+  input[type="range"] {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  
+  .song-image {
+    border-radius: 10%;
+    margin-top: 20%;
+    width: 400px;
+    height: 200px;
+    filter: grayscale(100%);
+    opacity: 0.4;
+    transform: scale(1.05) perspective(1000px) rotateY(0deg);
+    transition: transform 1s ease;
+  }
+  
+  .song-image:hover {
+    /* Restore original color and remove 3D effect on hover */
+    filter: grayscale(70%);
+    opacity: 0.6;
+    transform: scale(1.2) perspective(1000px) rotateY(15deg);
+  }
+
+  .buttons{
+    margin-top: 5%;
+    width: 100%;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center; /* Center the buttons vertically */
+  }
+
+  .custom-button1 {
+    width: 110px; /* Adjust the width as needed */
+    height: 110px; /* Adjust the height as needed */
+    margin-left:10%;
+    margin-right:10%;
+  }
+
+  .custom-button1-small {
+    width: 75px; /* Adjust the width as needed */
+    height: 75px;
+    margin-bottom: 1.5%;
+  }
+
+  .custom-button1,
+.custom-button1-small,
+.slidercustom-button {
+    /* Other styles */
+    transition: all 0.5s ease; 
+    margin: 0 5px; /* Smooth transition for all properties */
+}
+
+.custom-button1:hover,
+.custom-button1-small:hover,
+.slidercustom-button:hover {
+    transform: scale(1.1); /* Scale the image on hover */
+    background-color: #560679; /* Fallback color */
+    background-image: linear-gradient(to right, #560679, #290f31);
+    border-radius: 50%;
+}
+
+.custom-button1:active,
+.custom-button1-small:active,
+.slidercustom-button:active {
+    filter: brightness(80%); /* Darken the image on click */
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Set track color */
+  background-color: #090909;
+  /* Set height and width */
+  height: 10px;
+  width: 80%;
+  /* Set border radius */
+  border-radius: 5px;
+  padding: 0;
+  outline: none;
+}
+
+/* Style the track */
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #701398; /* Fallback color */
+  background-image: linear-gradient(to right, #560679, #290f31);
+  transition: all 0.5s ease;
+}
+
+/* Style the thumb */
+input[type="range"]::-webkit-slider-thumb {
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+  /* Set thumb size */
+  width: 15px;
+  height: 15px;
+  background: #0c0c0c;
+
+  border: 2px solid #333;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Style the thumb when hovered */
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #ab34d6;
+  transform: scale(2);
+}
+
+input[type="range"]:hover::-webkit-slider-runnable-track {
+  background: #bbb; /* Track color on hover */
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #ccc; /* Track color on focus */
+}
+
+.cross{
+    left:85%;
+    position: fixed;
+}

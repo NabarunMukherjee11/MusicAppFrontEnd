@@ -1,0 +1,87 @@
+.homemain-page {
+    background-color: #1b1a1b;
+    background-image: url('../assets/Images/LogoSPE.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #010004;
+    padding: 1%;
+    border-radius: 9px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 100% solid black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .left-container {
+    flex: 30%; /* Take 30% of available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+  .right-container {
+    flex: 70%; /* Take 70% of available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Set a fixed height */
+    overflow: auto;
+}
+
+.right-container::-webkit-scrollbar {
+    width: 0; /* Hide the scrollbar */
+}
+
+.song-list-container {
+    width: 100%; /* Ensure the container takes full width */
+    padding: 0px; /* Add padding to the container */
+}
+
+.left-container .maintext {
+    text-shadow: 
+    #e486e4 0 0 12px,
+    rgb(146, 16, 169) 0 0 25px,
+    #c87fe2 0 0 35PX,
+    #A91079 0 0 45PX;
+    font-size: 6em; /* Adjust the font size as needed */
+    font-family: 'Dancing Script', cursive;
+    text-align: right;
+    right: 80%;
+    top:10%;
+}
+
+.left-container .logoimage1 {
+    margin-top: 20px; /* Add some top margin to the image */
+    position: fixed;
+    bottom: -10px; /* Adjust as needed */
+    left: 20px;
+}
+
+.search-container {
+    margin-bottom: 20%;
+    top:10%;
+    position: fixed;
+}
+
+.searchBar {
+    position: fixed;
+    top: 0;
+    margin-top: 5%;
+    left: 0;
+    width: 100%;
+    opacity: 0.8;
+  }
+
+  input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
