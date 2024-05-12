@@ -87,7 +87,7 @@ const ReactCardSlider =(props)=>{
                             LayaXXX
                         </div>
                         <div className="cross">
-                            <img src={crossButton} className="custom-button1-small" alt="Replay" onClick={handleCross} />
+                            <img src={crossButton} className="custom-button2-small" alt="Replay" onClick={handleCross} />
                         </div>
                         <img src={songData.songImageUrl} alt="Song Image" className="song-image" />
                         <h2 className="song-name">{songData.songName}</h2>

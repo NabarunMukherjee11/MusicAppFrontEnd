@@ -242,9 +242,14 @@
     margin-bottom: 1.5%;
   }
 
+  .custom-button2-small{
+    width: 50px; /* Adjust the width as needed */
+    height: 50px;
+  }
+
   .custom-button1,
 .custom-button1-small,
-.slidercustom-button {
+.slidercustom-button, .custom-button2-small {
     /* Other styles */
     transition: all 0.5s ease; 
     margin: 0 5px; /* Smooth transition for all properties */
@@ -252,7 +257,7 @@
 
 .custom-button1:hover,
 .custom-button1-small:hover,
-.slidercustom-button:hover {
+.slidercustom-button:hover, .custom-button2-small:hover{
     transform: scale(1.1); /* Scale the image on hover */
     background-color: #560679; /* Fallback color */
     background-image: linear-gradient(to right, #560679, #290f31);
@@ -261,7 +266,7 @@
 
 .custom-button1:active,
 .custom-button1-small:active,
-.slidercustom-button:active {
+.slidercustom-button:active, .custom-button2-small:active {
     filter: brightness(80%); /* Darken the image on click */
 }
 
