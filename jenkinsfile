@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     sh 'cd spe-frontend && npm install && npm run build' 
-                    docker.build('nabaruniiitb/musicAppFrontend') 
+                    docker.build('nabaruniiitb/musicappfrontend') 
                 }
             }
         }
@@ -19,7 +19,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'DockerHubCred') {
-                        docker.image('nabaruniiitb/musicAppFrontend').push('latest') 
+                        docker.image('nabaruniiitb/musicappfrontend').push('latest') 
                     }
                 }
             }
