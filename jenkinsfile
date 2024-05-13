@@ -9,14 +9,18 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'cd spe-frontend && npm install && npm run build' 
-                docker.build('nabaruniiitb/musicAppFrontend') 
+                script {
+                    sh 'cd spe-frontend && npm install && npm run build' 
+                    docker.build('nabaruniiitb/musicAppFrontend') 
+                }
             }
         }
         stage('Push') {
             steps {
-                docker.withRegistry('https://registry.hub.docker.com', 'DockerHubCred') {
-                    docker.push('nabaruniiitb/musicAppFrontend') 
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'DockerHubCred') {
+                        docker.image('nabaruniiitb/musicAppFrontend').push('latest') 
+                    }
                 }
             }
         }
