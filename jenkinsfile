@@ -10,8 +10,16 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'cd spe-frontend && npm install && npm run build' 
-                    docker.build('nabaruniiitb/musicappfrontend') 
+                    // Change directory and run npm commands
+                    dir('spe-frontend') {
+                        sh 'npm install'
+                        sh 'npm run build'
+                    }
+                    
+                    if (currentBuild.result == 'FAILURE') {
+                        error 'npm build failed'
+                    }
+                    docker.build('nabaruniiitb/musicappfrontend')
                 }
             }
         }
