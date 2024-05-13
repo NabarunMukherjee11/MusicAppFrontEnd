@@ -7,7 +7,7 @@ pipeline {
                 git branch: 'main', url: "https://github.com/NabarunMukherjee11/MusicAppFrontEnd.git"
             }
         }
-        stage('Build') {
+        stage('Build FrontEnd Project') {
             steps {
                 script {
                     // Change directory and run npm commands
@@ -15,11 +15,17 @@ pipeline {
                         sh 'npm install'
                         sh 'npm run build'
                     }
+                }
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                script {
                     docker.build('nabaruniiitb/musicappfrontend')
                 }
             }
         }
-        stage('Push') {
+        stage('Push FrontEnd Image') {
             steps {
                 script {
                     docker.withRegistry('', 'DockerHubCred') {
