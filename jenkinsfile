@@ -15,10 +15,6 @@ pipeline {
                         sh 'npm install'
                         sh 'npm run build'
                     }
-                    
-                    if (currentBuild.result == 'FAILURE') {
-                        error 'npm build failed'
-                    }
                     docker.build('nabaruniiitb/musicappfrontend')
                 }
             }
