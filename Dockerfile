@@ -14,7 +14,7 @@ RUN npm install
 COPY spe-frontend .
 
 # Expose port 3000 to the outside world
-EXPOSE 3000
+EXPOSE 5173
 
 # Command to run the application
 CMD ["npm", "run", "dev"]
