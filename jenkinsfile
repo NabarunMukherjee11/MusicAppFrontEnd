@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/NabarunMukherjee11/MusicAppFrontEnd.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'cd spe-frontend && npm install && npm run build' 
+                docker.build('nabaruniiitb/musicAppFrontend') 
+            }
+        }
+        stage('Push') {
+            steps {
+                docker.withRegistry('https://registry.hub.docker.com', 'DockerHubCred') {
+                    docker.push('nabaruniiitb/musicAppFrontend') 
+                }
+            }
+        }
+    }
+}
