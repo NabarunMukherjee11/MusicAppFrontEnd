@@ -26,7 +26,7 @@ pipeline {
         stage('Push') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'DockerHubCred') {
+                    docker.withRegistry('', 'DockerHubCred') {
                         docker.image('nabaruniiitb/musicappfrontend').push('latest') 
                     }
                 }
