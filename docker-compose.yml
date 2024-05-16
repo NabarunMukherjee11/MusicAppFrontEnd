@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  musicapp-backend:
+    image: nabaruniiitb/musicappfrontend:latest
+    ports:
+      - "3000:3000"  # Change the host port to 9293
+    restart: always
+    deploy:
+      replicas: 1
+
