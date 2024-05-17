@@ -1,0 +1,7 @@
+- name: Deploy Docker Compose file
+  hosts: localhost
+  remote_user: nabarun
+  become: false
+  tasks:
+    - name: Start Docker Compose
+      shell: docker-compose up -d

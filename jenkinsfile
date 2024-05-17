@@ -7,7 +7,7 @@ pipeline {
                 git branch: 'main', url: "https://github.com/NabarunMukherjee11/MusicAppFrontEnd.git"
             }
         }
-        stage('Build') {
+        stage('Build Frontend Project') {
             steps {
                 script {
                     // Change directory and run npm commands
@@ -15,16 +15,44 @@ pipeline {
                         sh 'npm install'
                         sh 'npm run build'
                     }
+                }
+            }
+        }
+	stage('Build Docker Image') {
+	    steps {
+                script {
                     docker.build('nabaruniiitb/musicappfrontend')
                 }
             }
         }
-        stage('Push') {
+        stage('Remove Existing Docker Image') {
+            steps {
+                script {
+                    try {
+                        docker.image('nabaruniiitb/musicappfrontend:latest').remove()
+                    } catch (Exception e) {
+                        // Image doesn't exist or couldn't be removed
+                        echo "No existing image found or failed to remove"
+                    }
+                }
+            }
+        }
+        stage('Push to DockerHub') {
             steps {
                 script {
                     docker.withRegistry('', 'DockerHubCred') {
                         docker.image('nabaruniiitb/musicappfrontend').push('latest')
                     }
+                }
+            }
+        }
+	stage('Deploy with Ansible') {
+            steps {
+                script {
+                    ansiblePlaybook(
+                        playbook: 'deploy.yml',
+                        inventory: 'inventory'
+                     )
                 }
             }
         }
